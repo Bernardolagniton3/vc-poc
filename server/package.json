@@ -7,14 +7,15 @@
     "eslint": "^8.24.0",
     "express": "^4.18.1",
     "graphql": "^16.6.0",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "node-2fa": "^2.0.3"
   },
   "name": "vodacom-poc",
   "description": "POC project for Vodacom SA.",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "mocha"
   },
   "repository": {
@@ -26,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/joemonatos/vc-poc/issues"
   },
-  "homepage": "https://github.com/joemonatos/vc-poc#readme"
+  "homepage": "https://github.com/joemonatos/vc-poc#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
