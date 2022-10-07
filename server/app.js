@@ -4,6 +4,7 @@ const { typeDefs } = require("./schema/typedefs.js");
 const { resolvers } = require("./schema/resolvers.js");
 const express = require("express");
 const http = require("http");
+const { otp , verify} = require("./otpAuth")
 
 async function startApolloServer(typeDefs, resolvers) {
   const app = express();
@@ -18,6 +19,16 @@ async function startApolloServer(typeDefs, resolvers) {
   });
 
   await server.start();
+
+  app.use(express.json());
+
+  app.post('/otp', (req, res) => {
+    otp(req,res);
+  })
+
+  app.post('/verify', (req, res) => {
+    verify(req,res);
+  })
 
   server.applyMiddleware({ app, path: "/" });
 
